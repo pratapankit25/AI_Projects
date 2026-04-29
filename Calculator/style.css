@@ -1,33 +1,66 @@
+:root {
+    --bg: #1e1e2f;
+    --card: #2c2c3e;
+    --text: #ffffff;
+    --btn: #3a3a5a;
+    --btn-hover: #5757a1;
+}
+
+body.light {
+    --bg: #f4f4f4;
+    --card: #ffffff;
+    --text: #000000;
+    --btn: #e0e0e0;
+    --btn-hover: #c7c7c7;
+}
+
 body {
-    background: #1e1e2f;
+    background: var(--bg);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: Arial, sans-serif;
+    font-family: Arial;
 }
 
 .calculator {
-    background: #2c2c3e;
+    background: var(--card);
     padding: 20px;
-    border-radius: 15px;
-    width: 320px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    width: 330px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
+/* Header */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text);
+}
+
+#themeToggle {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Display */
 #display {
     width: 100%;
     height: 60px;
+    margin: 15px 0;
     font-size: 22px;
     text-align: right;
-    margin-bottom: 15px;
     padding: 10px;
     border-radius: 10px;
     border: none;
     background: #111;
-    color: #fff;
+    color: #0f0;
 }
 
+/* Buttons */
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -36,23 +69,31 @@ body {
 
 button {
     padding: 15px;
-    font-size: 16px;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
+    font-size: 16px;
+    background: var(--btn);
+    color: var(--text);
     cursor: pointer;
-    background: #3a3a5a;
-    color: white;
     transition: 0.2s;
 }
 
 button:hover {
-    background: #5757a1;
+    background: var(--btn-hover);
+}
+
+.operator {
+    background: #ff9500;
+}
+
+.equal {
+    background: #28a745;
 }
 
 .clear {
-    background: #ff4d4d;
+    background: #dc3545;
 }
 
 .delete {
-    background: #ffa500;
+    background: #6c757d;
 }

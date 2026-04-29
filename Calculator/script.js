@@ -1,5 +1,7 @@
 const display = document.getElementById("display");
+const toggleBtn = document.getElementById("themeToggle");
 
+// Calculator functions
 function append(value) {
     display.value += value;
 }
@@ -15,7 +17,18 @@ function deleteLast() {
 function calculate() {
     try {
         display.value = eval(display.value);
-    } catch (error) {
+    } catch {
         display.value = "Error";
     }
 }
+
+// Theme toggle
+toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+
+    if (document.body.classList.contains("light")) {
+        toggleBtn.textContent = "☀️";
+    } else {
+        toggleBtn.textContent = "🌙";
+    }
+});
